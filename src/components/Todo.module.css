@@ -1,0 +1,43 @@
+.item_date {
+    width: 150px;
+    height: 50px;
+    font-size: 14px;
+    border: 1px dashed #fff;
+    padding: 3px;
+}
+.item_todo {
+    display: flex;
+    cursor: pointer;
+    font-size: 14px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+    width: 520px;
+    height: 50px;
+    text-align: left;
+    margin-top: 15px;
+    background: linear-gradient(90deg, rgb(83, 86, 253) 0%, rgb(177, 17, 177) 100%);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-left: -40px;
+}
+.item_text {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 18px;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+.delete {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #fff;
+    border-radius: 30%;
+    padding: 5px;
+}

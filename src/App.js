@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import Todo from './components/Todo';
+import TodoForm from './components/TodoForm';
+import Card from './components/UI/Card';
 
 function App() {
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    // console.log('effect');
+    const stored = JSON.parse(localStorage.getItem('todos'));
+    if (stored === '1') {
+      setTodos(stored || [])
+    }
+  }, [])
+
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+
+  }, [todos])
+  const addTask = (todos) => {
+    setTodos((prevState) => [todos, ...prevState])
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <Card >
+      <header>
+        <h1>Список задач</h1>
       </header>
-    </div>
-  );
+      <div>
+        <TodoForm onAddTask={addTask} />
+        <Todo
+          todos={todos}
+          onChange={setTodos}
+        />
+      </div>
+    </Card>
+  )
 }
 
 export default App;

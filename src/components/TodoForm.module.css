@@ -1,0 +1,27 @@
+.form {
+    margin-right: 50px;
+}
+.form input {
+    padding: 14px 32px 14px 16px;
+    border-radius: 4px 0 0 4px;
+    border: 2px solid #5d0cff;
+    box-shadow: -1px 1px 5px 5px rgb(245, 28, 227);
+    outline: none;
+    background: transparent;
+    width: 400px;
+    height: 25px;
+    color: antiquewhite;
+}
+.form button {
+    height: 58px;
+    width: 80px;
+    padding: 16px 7px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    outline: none;
+    background: linear-gradient(90deg, rgb(215, 36, 221) 0%, rgb(177, 17, 177) 100%);
+    color: #fff;
+    text-transform: capitalize;
+    box-shadow: 3px 1px 5px 5px rgb(245, 28, 227);
+}
