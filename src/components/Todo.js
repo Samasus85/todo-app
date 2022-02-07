@@ -1,11 +1,8 @@
-// import ExpenseDate from "./ExpenseDate";
 import classes from './Todo.module.css'
-import Card from './UI/Card'
 
 const Todo = ({ todos, onChange }) => {
-    // const expenseDate = new Date(2022, 2, 5)
 
-    const removeTask = (e) => {
+    const removeTodo = (e) => {
         const filteredTodos = todos.filter((todo) => todo.id !== e.target.id)
         onChange([...filteredTodos])
     }
@@ -19,7 +16,7 @@ const Todo = ({ todos, onChange }) => {
         })
         onChange([...checkedTodos])
     }
-    let todo = <h1 className={classes.no_tasks}>NO TASKS</h1>
+    let todo = <h2>Список пусто</h2>
     if (todos.length > 0) {
         return todos.map((todo) => (
             <ul key={todo.id}>
@@ -29,19 +26,18 @@ const Todo = ({ todos, onChange }) => {
                         id={todo.id}
                         checked={todo.completed}
                         onChange={toggleHandler}
-                        className={classes.strike}
+                        className={classes.myCheck}
                     />
                     <span
-                        className={todo.completed ? classes.stike : classes.item_text}
+                        className={todo.completed ? classes.strike : classes.item_text}
                     >
                         {todo.value}
                     </span>
                     <span className={classes.item_date}>{todo.date}</span>
-
-
-                    <div onClick={() => removeTask(todo.id)}>
-                        <span className={classes.delete}>X</span>
-                    </div>
+                    <button
+                        id={todo.id}
+                        onClick={removeTodo} className={classes.delete}>X
+                    </button>
                 </li>
             </ul>
         ))

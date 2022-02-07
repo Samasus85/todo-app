@@ -12,35 +12,30 @@ const todoReduser = (prevState, action) => {
     }
 }
 const TodoForm = ({ onAddTask }) => {
-    const [task, dispatchTask] = useReducer(todoReduser, {
+    const [todo, dispatchTodo] = useReducer(todoReduser, {
         value: '',
         date: null,
     });
-    const [error, setError] = useState(null);
+    const [error, setError] = useState(false);
 
     const submitHandler = (e) => {
         e.preventDefault()
-        if (task.value.trim().length > 0) {
+        if (todo.value.trim().length > 0) {
             const newItem = {
-                ...task,
-                id: Math.random().toString(36).substring(2.9),
+                ...todo,
+                id: Math.random().toString(),
                 complete: false,
             }
             onAddTask(newItem)
-        }
-        if (task.value.trim().length === 0) {
-            setError({
-                title: 'Поле пусто!!!',
-                message: 'Пожалуйста  напишите свою задачу',
-            })
-            dispatchTask({
-                type: 'INPUT_TASK',
-                value: '',
-            })
-        }
+        } else setError(true)
+        dispatchTodo({
+            type: 'INPUT_TASK',
+            value: '',
+        })
+
     }
     const changeHandler = (e) => {
-        dispatchTask({
+        dispatchTodo({
             type: 'INPUT_TASK',
             value: e.target.value
         })
@@ -61,7 +56,7 @@ const TodoForm = ({ onAddTask }) => {
             {error && <Modal title={error.title} message={error.message} onConfirm={errorHandler} />}
             <form className={classes.form} onSubmit={submitHandler}>
                 <input
-                    value={task.value}
+                    value={todo.value}
                     type='text'
                     onChange={changeHandler}
                     onKeyDown={keyPressHandler}
