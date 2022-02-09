@@ -1,0 +1,56 @@
+.my-check {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    border-radius: 30%;
+    padding: 5px;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgb(97, 253, 83) 0%, rgb(95, 185, 245) 100%);
+}
+.my-check img {
+    width: 30px;
+    height: 30px;
+}
+
+.item-todo {
+    display: flex;
+    cursor: pointer;
+    font-size: 14px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+    width: 520px;
+    height: 50px;
+    text-align: left;
+    margin-top: 45px;
+    background: linear-gradient(90deg, rgb(97, 253, 83) 0%, rgb(95, 185, 245) 100%);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-left: -40px;
+    padding: 15px;
+}
+.item_text {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 18px;
+}
+.strike {
+    text-decoration: line-through;
+    color: rgb(252, 45, 241);
+}
+.delete {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    border-radius: 30%;
+    padding: 5px;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgb(97, 253, 83) 0%, rgb(95, 185, 245) 100%);
+}
+.list {
+    color: #fff;
+}
