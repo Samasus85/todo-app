@@ -1,4 +1,3 @@
-import './App.css';
 import { useEffect, useReducer } from 'react';
 import { todoReducer, initialState } from './reducer';
 import Todo from './components/Todo';
